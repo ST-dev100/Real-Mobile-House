@@ -1,0 +1,9 @@
+.togglee
+{
+    border: 2px solid black;
+}
+@media screen and (max-width: 1200px) {
+    .togglee {
+      display: none;
+    }
+  }

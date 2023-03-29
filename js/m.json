@@ -1,0 +1,46 @@
+[{
+    "name": "Iphone",
+    "model" : "Promax",
+    "date" : "2/20/2023",
+    "url" : "images/iphone.jpeg",
+    "id": 21,
+    "title": "very good",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+},
+{
+    "name": "Nokia",
+    "model" : "c30",
+    "date" : "2/20/2023",
+    "url" : "images/samsung.jpg",
+    "id": 23,
+    "title": "very good",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+},
+{
+    "name": "Nokia",
+    "model" : "c30",
+    "date" : "2/20/2023",
+    "url" : "images/tab.jpg",
+    "id": 24,
+    "title": "very good",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+},
+{
+    "name": "Nokia",
+    "model" : "c30",
+    "date" : "2/20/2023",
+    "url" : "images/earpod.jpg",
+    "id": 25,
+    "title": "very good",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+},
+{
+    "name": "Nokia",
+    "model" : "c30",
+    "date" : "2/20/2023",
+    "url" : "images/toshiba.jpg",
+    "id": 26,
+    "title": "very good",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+}
+]
