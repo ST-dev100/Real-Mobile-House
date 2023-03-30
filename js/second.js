@@ -10,6 +10,13 @@ export const get = async function()
     let buu = document.getElementById('buu')
     let f = document.getElementById("f");
     let first = document.getElementsByClassName('first')
+    let r=document.getElementById('simon')
+    
+    // let htwo = r.children[1];
+    
+    r.children[1].addEventListener('click',()=>{
+      alert('clicked')
+    })
 
     // let fil = respon.filter(e=>e.name==='Nokia');
 
