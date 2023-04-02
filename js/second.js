@@ -13,11 +13,43 @@ export const get = async function()
     let r=document.getElementById('simon')
     
     // let htwo = r.children[1];
-    
-    r.children[1].addEventListener('click',()=>{
-      alert('clicked')
+    r.children[1].children[1].children[1].style.cursor = 'pointer';
+    r.children[1].children[1].children[1].addEventListener('click',async function(){
+
+      const ur = `../js/acc.json`;
+    const re =await fetch(ur);
+    const respo = await re.json();
+    const productss = [];
+    f.innerHTML = '';
+
+    for(let i = 0; i < respo.length; i++)
+    {
+        let divv = document.createElement('div');
+        divv.classList.add('col-sm-4');
+        divv.innerHTML = `<div class="card">
+        <img id="i" class="card-img-top" src=${respo[i].url} alt="Card image" >
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          
+          <p class="card-text">${respo[i].name}</p>
+          
+          <button class="btn btn-primary ggg" type="submit">To Buy click</button>
+       
+        </div>
+      </div>`
+        productss.push(divv);
+
+        f.append(divv);
+        let g = document.querySelectorAll('.ggg')
+            g[i].addEventListener('click',()=>{
+              window.location.href = `pages/sale.html?name=${respo[i].name}`
+            })
+    }
+      // f.style.display = 'none';
     })
 
+
+    
     // let fil = respon.filter(e=>e.name==='Nokia');
 
     // for (let i = 0; i < first.length; i++) {
@@ -40,6 +72,7 @@ export const get = async function()
         </div>
       </div>`
         products.push(div);
+        
         f.append(div);
         let g = document.querySelectorAll('.ggg')
             g[i].addEventListener('click',()=>{
@@ -71,6 +104,7 @@ export const get = async function()
           </div>`
           
             products.push(div);
+            // f.innerHTML = div;
             f.append(div);
             let g = document.querySelectorAll('.ggggggggg')
             g[i].addEventListener('click',()=>{
@@ -82,6 +116,7 @@ export const get = async function()
         let div = document.createElement('div');
         div.innerHTML=`<h1>Sorry there is no such kind of product</h1>`
         f.append(div);
+        // f.innerHTML = div;
       }
      
       })
