@@ -14,8 +14,10 @@ export const get = async function()
     
     // let htwo = r.children[1];
     r.children[1].children[1].children[1].style.cursor = 'pointer';
+    r.children[1].children[1].children[0].style.cursor = 'pointer';
     r.children[1].children[1].children[1].addEventListener('click',async function(){
-
+      r.children[1].children[1].children[1].classList.add("clicked");
+      r.children[1].children[1].children[0].classList.remove("clicked");
       const ur = `../js/acc.json`;
     const re =await fetch(ur);
     const respo = await re.json();
@@ -49,12 +51,45 @@ export const get = async function()
     })
 
 
-    
+    r.children[1].children[1].children[0].addEventListener('click',async function(){
+      r.children[1].children[1].children[0].classList.add("clicked");
+      r.children[1].children[1].children[1].classList.remove("clicked");
+      const products = [];
+      f.innerHTML = '';
+
+    for(let i = 0; i < respon.length; i++)
+    {
+        let div = document.createElement('div');
+        div.classList.add('col-sm-4');
+        div.innerHTML = `<div class="card">
+        <img id="i" class="card-img-top" src=${respon[i].url} alt="Card image" >
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          
+          <p class="card-text">${respon[i].name}</p>
+          
+          <button class="btn btn-primary ggg" type="submit">To Buy click</button>
+       
+        </div>
+      </div>`
+        products.push(div);
+        
+        f.append(div);
+        let g = document.querySelectorAll('.ggg')
+            g[i].addEventListener('click',()=>{
+              window.location.href = `pages/sale.html?name=${respon[i].name}`
+            })
+    }
+
+
+    })
+
+
     // let fil = respon.filter(e=>e.name==='Nokia');
 
     // for (let i = 0; i < first.length; i++) {
     //     first[i].textContent = respon[i].name;
-    
+    r.children[1].children[1].children[0].classList.add("clicked");
     const products = [];
     for(let i = 0; i < respon.length; i++)
     {
@@ -81,11 +116,63 @@ export const get = async function()
     }
 
 
-      buu.addEventListener('click',()=>{
-        let fil = respon.filter(e=>e.name===inn.value);
+      // buu.addEventListener('click',()=>{
+      //   let fil = respon.filter(e=>e.name===inn.value);
+      //   const products = [];
+      //   f.innerHTML = "";
+      //   if(fil!=""){
+      //     r.children[1].children[1].children[0].style.color="red";
+      //   for(let i = 0; i < fil.length; i++)
+      //   {
+      //       let div = document.createElement('div');
+      //       div.classList.add('col-sm-4');
+      //       div.innerHTML = `<div class="card">
+      //       <img id="i" class="card-img-top" src=${fil[i].url} alt="Card image" >
+      //       <div class="card-body">
+      //         <h5 class="card-title">Special title treatment</h5>
+      //         <p class="card-text">${fil[i].name}</p>
+              
+              
+      //               <button class="btn btn-primary ggggggggg" type="submit">To Buy click</button>
+              
+              
+      //       </div>
+      //     </div>`
+          
+      //       products.push(div);
+      //       // f.innerHTML = div;
+      //       f.append(div);
+      //       let g = document.querySelectorAll('.ggggggggg')
+      //       g[i].addEventListener('click',()=>{
+      //         window.location.href = `pages/sale.html?name=${respon[i].name}`
+      //       })
+      //   }
+      // }
+      // else{
+      //   let div = document.createElement('div');
+      //   div.innerHTML=`<h1>Sorry there is no such kind of product</h1>`
+      //   f.append(div);
+      //   // f.innerHTML = div;
+      // }
+     
+      // })
+
+      buu.addEventListener('click',async()=>{
+
+        const ur = `../js/acc.json`;
+        const re =await fetch(ur);
+        const respo = await re.json();
+        // let fil = ''
+        let fill = respon.filter(e=>e.name===inn.value);
+        let fil = respo.filter(e=>e.name===inn.value);
+        
+
         const products = [];
         f.innerHTML = "";
-        if(fil!=""){
+          if(fil!=""){
+          // r.children[1].children[1].children[1].style.color="red";
+          r.children[1].children[1].children[1].classList.add("clicked");
+          r.children[1].children[1].children[0].classList.remove("clicked");
         for(let i = 0; i < fil.length; i++)
         {
             let div = document.createElement('div');
@@ -112,15 +199,50 @@ export const get = async function()
             })
         }
       }
+       else if(fill!=""){
+
+        r.children[1].children[1].children[0].classList.add("clicked");
+        r.children[1].children[1].children[1].classList.remove("clicked");
+          // r.children[1].children[1].children[0].style.color="red";
+        for(let i = 0; i < fill.length; i++)
+        {
+            let div = document.createElement('div');
+            div.classList.add('col-sm-4');
+            div.innerHTML = `<div class="card">
+            <img id="i" class="card-img-top" src=${fill[i].url} alt="Card image" >
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">${fill[i].name}</p>
+              
+              
+                    <button class="btn btn-primary ggggggggg" type="submit">To Buy click</button>
+              
+              
+            </div>
+          </div>`
+          
+            products.push(div);
+            // f.innerHTML = div;
+            f.append(div);
+            let g = document.querySelectorAll('.ggggggggg')
+            g[i].addEventListener('click',()=>{
+              window.location.href = `pages/sale.html?name=${respon[i].name}`
+            })
+        }
+      
+
+      }
       else{
         let div = document.createElement('div');
         div.innerHTML=`<h1>Sorry there is no such kind of product</h1>`
         f.append(div);
         // f.innerHTML = div;
       }
+    
+      
      
       })
-
+      
     
         
     

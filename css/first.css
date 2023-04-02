@@ -11,4 +11,8 @@
   {
     cursor: pointer;
   }
- 
+ .clicked
+ {
+  color:white;
+  background-color: black;
+ }
