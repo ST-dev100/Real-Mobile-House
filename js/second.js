@@ -44,7 +44,7 @@ export const get = async function()
         f.append(divv);
         let g = document.querySelectorAll('.ggg')
             g[i].addEventListener('click',()=>{
-              window.location.href = `pages/sale.html?name=${respo[i].name}`
+              window.location.href = `pages/sale.html?name=${respo[i].name}&model=${respo[i].model}`
             })
     }
       // f.style.display = 'none';
@@ -77,7 +77,7 @@ export const get = async function()
         f.append(div);
         let g = document.querySelectorAll('.ggg')
             g[i].addEventListener('click',()=>{
-              window.location.href = `pages/sale.html?name=${respon[i].name}`
+              window.location.href = `pages/sale.html?name=${respon[i].name}&model=${respon[i].model}`
             })
     }
 
@@ -111,7 +111,7 @@ export const get = async function()
         f.append(div);
         let g = document.querySelectorAll('.ggg')
             g[i].addEventListener('click',()=>{
-              window.location.href = `pages/sale.html?name=${respon[i].name}`
+              window.location.href = `pages/sale.html?name=${respon[i].name}&model=${respon[i].model}`
             })
     }
 
@@ -195,7 +195,7 @@ export const get = async function()
             f.append(div);
             let g = document.querySelectorAll('.ggggggggg')
             g[i].addEventListener('click',()=>{
-              window.location.href = `pages/sale.html?name=${respon[i].name}`
+              window.location.href = `pages/sale.html?name=${respon[i].name}&model=${respon[i].model}`
             })
         }
       }
@@ -226,7 +226,7 @@ export const get = async function()
             f.append(div);
             let g = document.querySelectorAll('.ggggggggg')
             g[i].addEventListener('click',()=>{
-              window.location.href = `pages/sale.html?name=${respon[i].name}`
+              window.location.href = `pages/sale.html?name=${respon[i].name}&model=${respon[i].model}`
             })
         }
       
