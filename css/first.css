@@ -16,3 +16,8 @@
   color:white;
   background-color: black;
  }
+
+ .nodisplay
+ {
+  display: none;
+ }

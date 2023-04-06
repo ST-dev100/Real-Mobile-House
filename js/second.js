@@ -24,8 +24,12 @@ export const get = async function()
     const productss = [];
     f.innerHTML = '';
 
+    if(respo.length <= 3)
+{
+
     for(let i = 0; i < respo.length; i++)
     {
+
         let divv = document.createElement('div');
         divv.classList.add('col-sm-4');
         divv.innerHTML = `<div class="card">
@@ -46,7 +50,94 @@ export const get = async function()
             g[i].addEventListener('click',()=>{
               window.location.href = `pages/sale.html?name=${respo[i].name}&model=${respo[i].model}`
             })
-    }
+    }}
+    else{
+      let bu =  document.createElement('button')
+      let bu2 =  document.createElement('button')
+       bu2.textContent = "Hide"
+      // let divv = document.createElement('div');
+      bu.textContent = "Show more"
+      // divv.append(bu)
+
+     
+      
+      
+      for(let i = 0; i < 4; i++)
+      {
+  
+          let divv = document.createElement('div');
+          divv.classList.add('col-sm-4');
+          divv.innerHTML = `<div class="card">
+          <img id="i" class="card-img-top" src=${respo[i].url} alt="Card image" >
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            
+            <p class="card-text">${respo[i].name}</p>
+            
+            <button class="btn btn-primary ggg" type="submit">To Buy click</button>
+         
+          </div>
+        </div>`
+          productss.push(divv);
+  
+          f.append(divv);
+          let g = document.querySelectorAll('.ggg')
+              g[i].addEventListener('click',()=>{
+                window.location.href = `pages/sale.html?name=${respo[i].name}&model=${respo[i].model}`
+              })
+      }
+      f.append(bu)
+      f.append(bu2)
+      bu2.classList.add('nodisplay')
+      bu.addEventListener('click',function(){
+        let divv = document.createElement('div');
+          // divv.innerHTML = "";      
+          // f.innerHTML = "";  
+          bu.classList.add('nodisplay');
+          bu2.classList.remove('nodisplay')
+        for (let i = 4; i < respo.length; i++) {
+          
+
+          let divv = document.createElement('div');
+          divv.classList.add('col-sm-4');
+          divv.classList.add('isis');
+          divv.innerHTML = `<div class="card">
+          <img id="i" class="card-img-top" src=${respo[i].url} alt="Card image" >
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            
+            <p class="card-text">${respo[i].name}</p>
+            
+            <button class="btn btn-primary ggg" type="submit">To Buy click</button>
+         
+          </div>
+        </div>`
+          productss.push(divv);
+  
+          f.append(divv);
+          let g = document.querySelectorAll('.ggg')
+              g[i].addEventListener('click',()=>{
+                window.location.href = `pages/sale.html?name=${respo[i].name}&model=${respo[i].model}`
+              })
+                 
+
+
+        }
+      })
+
+      bu2.addEventListener('click',function(){
+        bu2.classList.add('nodisplay');
+        bu.classList.remove('nodisplay')
+        let is = document.getElementsByClassName('isis')
+        for (let i = 0; i < is.length; i++)
+        {
+
+          is[i].classList.add('nodisplay')
+        }
+      })
+
+
+     }
       // f.style.display = 'none';
     })
 
@@ -80,6 +171,7 @@ export const get = async function()
               window.location.href = `pages/sale.html?name=${respon[i].name}&model=${respon[i].model}`
             })
     }
+  
 
 
     })
